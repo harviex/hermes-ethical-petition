@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧡 Hermès Ethical Petition | 爱马仕公益转型倡议</title>
+    <meta name="description" content="呼吁爱马仕取消配货制度，以成本价出售产品，转型为公益奢侈品品牌">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas粒子背景 -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 头部语言切换 -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="ja">日本語</button>
+            <button class="lang-btn" data-lang="ko">한국어</button>
+        </div>
+
+        <!-- Hero区域 -->
+        <header class="hero">
+            <div class="hero-badge">🧡 LUXURY FOR ALL</div>
+            <h1 class="hero-title" data-i18n="title">爱马仕，是时候改变了</h1>
+            <p class="hero-subtitle" data-i18n="subtitle">
+                一款Birkin包成本仅$800，售价却高达$12,000+，还要强制配货。<br>
+                我们呼吁：取消配货制度，以成本价出售，将奢侈品转变为公益工具。
+            </p>
+        </header>
+
+        <!-- 计数器区域（动画核心） -->
+        <section class="counter-section">
+            <div class="counter-card">
+                <div class="counter-icon">🧡</div>
+                <div class="counter-number" id="supportCount">0</div>
+                <div class="counter-label" data-i18n="supporters">位支持者</div>
+                <button class="support-btn" id="supportBtn" data-i18n="support_btn">
+                    我支持这个倡议
+                </button>
+                <div class="counter-note" data-i18n="one_vote">每个IP只能支持一次</div>
+            </div>
+        </section>
+
+        <!-- GitHub联动 -->
+        <section class="github-section">
+            <div class="github-card">
+                <div class="github-icon">⭐</div>
+                <div class="github-info">
+                    <span data-i18n="github_text">如果你是GitHub用户，请为这个仓库加星：</span>
+                    <a href="https://github.com/harviex/hermes-ethical-petition" target="_blank" class="github-link">
+                        github.com/harviex/hermes-ethical-petition
+                    </a>
+                </div>
+                <div class="github-stars">
+                    <span id="githubStars">--</span> stars
+                </div>
+            </div>
+        </section>
+
+        <!-- 成本价对比 -->
+        <section class="price-section">
+            <h2 class="section-title" data-i18n="price_title">💰 成本 vs 售价</h2>
+            <div class="price-grid" id="priceGrid">
+                <!-- JS动态生成 -->
+            </div>
+        </section>
+
+        <!-- 号召文案 -->
+        <section class="cta-section">
+            <div class="cta-box">
+                <h3 data-i18n="cta_title">🌍 让全世界听到消费者的声音</h3>
+                <p data-i18n="cta_text">
+                    这个网站是开源的，可以复制到其他奢侈品品牌。<br>
+                    让我们一起建立一个"人民奢侈品监督平台"。
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/harviex/hermes-ethical-petition" target="_blank" class="btn-primary" data-i18n="btn_github">
+                        📦 在GitHub上查看
+                    </a>
+                    <button class="btn-secondary" onclick="shareSite()" data-i18n="btn_share">
+                        🔗 分享这个网站
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p data-i18n="footer">© 2026 Hermès Ethical Petition | 开源倡议 | Powered by 龙虾姬 🦞</p>
+        </footer>
+    </div>
+
+    <!-- JS文件 -->
+    <script src="js/i18n.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
