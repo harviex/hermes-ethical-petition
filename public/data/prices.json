@@ -1,0 +1,50 @@
+[
+    {
+        "product": "Birkin 30",
+        "official_price": 12000,
+        "estimated_cost": 800,
+        "currency": "$",
+        "specs": "Togo leather, gold hardware",
+        "notes": "Most popular size, waitlist 2-5 years"
+    },
+    {
+        "product": "Kelly 28",
+        "official_price": 10500,
+        "estimated_cost": 750,
+        "currency": "$",
+        "specs": "Epsom leather, palladium hardware",
+        "notes": "Classic trapezoidal shape"
+    },
+    {
+        "product": "Constance 18",
+        "official_price": 8500,
+        "estimated_cost": 600,
+        "currency": "$",
+        "specs": "Chevre leather, gold hardware",
+        "notes": "H-shaped buckle, crossbody strap"
+    },
+    {
+        "product": "Silk Twilly",
+        "official_price": 450,
+        "estimated_cost": 15,
+        "currency": "$",
+        "specs": "100% silk, hand-rolled edges",
+        "notes": "86cm x 5cm, made in France"
+    },
+    {
+        "product": "Clic H Bracelet",
+        "official_price": 770,
+        "estimated_cost": 50,
+        "currency": "$",
+        "specs": "Gold plated, enamel",
+        "notes": "Hermès signature H shape"
+    },
+    {
+        "product": "Evelyne 29",
+        "official_price": 3200,
+        "estimated_cost": 200,
+        "currency": "$",
+        "specs": "Clemence leather, canvas strap",
+        "notes": "Casual crossbody with perforated H"
+    }
+]

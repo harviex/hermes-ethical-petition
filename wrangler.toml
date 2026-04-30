@@ -1,0 +1,21 @@
+name = "hermes-ethical-petition"
+type = "pages"
+
+# Pages Functions 配置
+[pages_build_output_dir]
+dir = "public"
+
+# KV 命名空间绑定（用于存储计数器数据）
+[[kv_namespaces]]
+binding = "COUNTER_KV"
+id = "YOUR_KV_NAMESPACE_ID"  # 需要先创建KV命名空间
+
+# 环境变量
+[vars]
+REPO_OWNER = "harviex"
+REPO_NAME = "hermes-ethical-petition"
+
+# 构建配置（如果有构建步骤的话）
+[build]
+command = ""  # 纯静态站点，无需构建
+destination_dir = "public"
