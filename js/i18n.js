@@ -87,17 +87,8 @@ const translations = {
     }
 };
 
-// 国家代码到语言的映射
-const countryToLang = {
-    'CN': 'zh', 'TW': 'zh', 'HK': 'zh', 'MO': 'zh',
-    'US': 'en', 'GB': 'en', 'AU': 'en', 'CA': 'en',
-    'FR': 'fr',
-    'JP': 'ja',
-    'KR': 'ko'
-};
-
-// 检测用户语言
-async function detectUserLanguage() {
+// 检测用户语言（基于浏览器语言 + 本地存储）
+function detectUserLanguage() {
     // 1. 检查本地存储（用户手动选择的语言优先）
     const savedLang = localStorage.getItem('preferred_lang');
     if (savedLang && translations[savedLang]) {
@@ -110,32 +101,8 @@ async function detectUserLanguage() {
         return browserLang;
     }
 
-    // 3. 调用IP地理位置API（使用多个fallback）
-    const ipApiList = [
-        'https://ipapi.co/json/',
-        'https://ip.useragentinfo.com/json',
-        'https://api.ip.sb/geoip'
-    ];
-
-    for (const apiUrl of ipApiList) {
-        try {
-            const response = await fetch(apiUrl, { 
-                signal: AbortSignal.timeout(3000) // 3秒超时
-            });
-            const data = await response.json();
-            const countryCode = data.country_code || data.country_code_iso2 || data.country;
-            if (countryCode && countryToLang[countryCode.toUpperCase()]) {
-                return countryToLang[countryCode.toUpperCase()];
-            }
-        } catch (error) {
-            console.warn(`IP API ${apiUrl} 失败:`, error.message);
-            continue; // 尝试下一个API
-        }
-    }
-
-    // 4. 所有API都失败，使用浏览器语言或默认英文
-    console.warn('所有IP API都失败，使用浏览器语言');
-    return translations[browserLang] ? browserLang : 'en';
+    // 3. 默认返回英文
+    return 'en';
 }
 
 // 应用翻译
@@ -172,8 +139,8 @@ function initLanguageSwitcher() {
 }
 
 // 初始化
-(async function() {
-    const userLang = await detectUserLanguage();
+(function() {
+    const userLang = detectUserLanguage();
     applyTranslations(userLang);
     initLanguageSwitcher();
 })();
