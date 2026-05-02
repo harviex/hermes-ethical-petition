@@ -211,23 +211,5 @@ function shareSite() {
     }
 }
 
-// 获取GitHub星标数
-async function updateGitHubStars() {
-    try {
-        const response = await fetch(`https://api.github.com/repos/harviex/hermes-ethical-petition`);
-        const data = await response.json();
-        const starsEl = document.getElementById('githubStars');
-        if (starsEl) {
-            starsEl.textContent = data.stargazers_count.toLocaleString();
-        }
-    } catch (error) {
-        console.error('获取GitHub星标失败:', error);
-        const starsEl = document.getElementById('githubStars');
-        if (starsEl) {
-            starsEl.textContent = 'N/A';
-        }
-    }
-}
-
-// 页面加载时获取GitHub星标
-updateGitHubStars();
+// 页面加载时初始化
+// updateGitHubStars() 已移除 - 不需要GitHub星标显示
