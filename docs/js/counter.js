@@ -19,8 +19,7 @@ async function checkSupportStatus() {
     // 优先通过API检查IP（主要依据）
     try {
         const response = await fetch(`${VERCEL_API_BASE}/api/check`, {
-            method: 'GET',
-            credentials: 'include'
+            method: 'GET'
         });
         
         if (response.ok) {
@@ -164,8 +163,7 @@ async function handleSupport() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            credentials: 'include'
+            }
         });
         
         if (!response.ok) {
