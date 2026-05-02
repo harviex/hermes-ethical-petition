@@ -4,6 +4,7 @@ import os
 import json
 import base64
 import re
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
@@ -134,5 +135,4 @@ def health_check():
     return jsonify({'status': 'ok', 'timestamp': datetime.utcnow().isoformat()})
 
 if __name__ == '__main__':
-    from datetime import datetime
     app.run(debug=True, port=5000)
