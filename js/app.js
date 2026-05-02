@@ -32,6 +32,20 @@ const fallbackPrices = [
         estimated_cost: 15,
         currency: "$",
         specs: "100% silk, hand-rolled edges"
+    },
+    {
+        product: "Clic H Bracelet",
+        official_price: 770,
+        estimated_cost: 50,
+        currency: "$",
+        specs: "Gold plated, enamel"
+    },
+    {
+        product: "Evelyne 29",
+        official_price: 3200,
+        estimated_cost: 200,
+        currency: "$",
+        specs: "Clemence leather, canvas strap"
     }
 ];
 
