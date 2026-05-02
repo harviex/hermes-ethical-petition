@@ -1,7 +1,7 @@
 // ===========================
 // 多语言国际化系统
 // 支持：中/英/法/日/韩
-// 自动根据IP国家识别语言
+// 基于浏览器语言 + 本地存储
 // ===========================
 
 const translations = {
@@ -23,14 +23,14 @@ const translations = {
     },
     en: {
         title: "Hermès, It's Time for Change",
-        subtitle: "A Birkin bag costs only $800 to make, yet sells for $12,000+ with forced \"matching purchases\".<br>We call for: End the quota system. Sell at cost. Transform luxury into a public good.",
+        subtitle: "A Birkin bag costs only $<span class=\"number\">800</span> to make, yet sells for $<span class=\"number\">12,000</span>+ with forced \\\"matching purchases\\\".<br>We call for: End the quota system. Sell at cost. Transform luxury into a public good.",
         supporters: "Supporters",
         support_btn: "🧡 Support This Petition",
         one_vote: "One vote per IP address",
         github_text: "If you're on GitHub, please star this repo:",
         price_title: "💰 Cost vs Retail Price",
         cta_title: "🌍 Let the World Hear Consumers' Voice",
-        cta_text: "This website is open-source and can be replicated for other luxury brands.<br>Let's build a \"People's Luxury Watchdog Platform\" together.",
+        cta_text: "This website is open-source and can be replicated for other luxury brands.<br>Let's build a \\\"People's Luxury Watchdog Platform\\\" together.",
         btn_github: "📦 View on GitHub",
         btn_share: "🔗 Share This Site",
         footer: "© 2026 Hermès Ethical Petition | Open Source Initiative | Powered by 龙虾姬 🦞",
@@ -39,14 +39,14 @@ const translations = {
     },
     fr: {
         title: "Hermès, Il Est Temps de Changer",
-        subtitle: "Un sac Birkin coûte seulement 800$ à fabriquer, mais se vend 12 000$+ avec des \"achats obligatoires\".<br>Nous demandons : Fin du système de quota. Vente au coût de revient. Transformez le luxe en bien public.",
+        subtitle: "Un sac Birkin coûte seulement <span class=\"number\">800$</span> à fabriquer, mais se vend <span class=\"number\">12 000$</span>+ avec des \\\"achats obligatoires\\\".<br>Nous demandons : Fin du système de quota. Vente au coût de revient. Transformez le luxe en bien public.",
         supporters: "Partisans",
         support_btn: "🧡 Soutenir Cette Pétition",
         one_vote: "Un vote par adresse IP",
         github_text: "Si vous êtes sur GitHub, veuillez ajouter une étoile à ce dépôt :",
         price_title: "💰 Coût vs Prix de Vente",
         cta_title: "🌍 Faisons Entendre la Voix des Consommateurs",
-        cta_text: "Ce site est open-source et peut être répliqué pour d'autres marques de luxe.<br>Construisons ensemble une \"Plateforme Citoyenne de Surveillance du Luxe\".",
+        cta_text: "Ce site est open-source et peut être répliqué pour d'autres marques de luxe.<br>Construisons ensemble une \\\"Plateforme Citoyenne de Surveillance du Luxe\\\".",
         btn_github: "📦 Voir sur GitHub",
         btn_share: "🔗 Partager Ce Site",
         footer: "© 2026 Pétition Éthique Hermès | Initiative Open Source | Propulsé par 龙虾姬 🦞",
@@ -55,7 +55,7 @@ const translations = {
     },
     ja: {
         title: "エルメス、変革の時が来ました",
-        subtitle: "バーキンバッグの製造原価はわずか800ドルですが、強制的な「買い回り」と共に12,000ドル以上で販売されています。<br>私たちは求めます：買い回り制度の廃止。原価での販売。ラグジュアリーを公共の利益へ。",
+        subtitle: "バーキンバッグの製造原価はわずか<span class=\"number\">800ドル</span>ですが、強制的な「買い回り」と共に<span class=\"number\">12,000ドル</span>以上で販売されています。<br>私たちは求めます：買い回り制度の廃止。原価での販売。ラグジュアリーを公共の利益へ。",
         supporters: "人の支持者",
         support_btn: "🧡 この嘆願を支持する",
         one_vote: "1IPアドレスにつき1票",
@@ -71,14 +71,14 @@ const translations = {
     },
     ko: {
         title: "에르메스, 이제 변화할 때입니다",
-        subtitle: "버킨백은 단돈 800달러의 원가로 만들어지지만, 강제 \"매칭 구매\"와 함께 12,000달러 이상에 판매됩니다.<br>우리는 요구합니다: 할당제 폐지. 원가 판매. 명품을 공공의 이익으로 전환하십시오.",
+        subtitle: "버킨백은 단돈 <span class=\"number\">800달러</span>의 원가로 만들어지지만, 강제 \\\"매칭 구매\\\"와 함께 <span class=\"number\">12,000달러</span> 이상에 판매됩니다.<br>우리는 요구합니다: 할당제 폐지. 원가 판매. 명품을 공공의 이익으로 전환하십시오.",
         supporters: "명의 서포터",
         support_btn: "🧡 이 청원 지원하기",
         one_vote: "IP당 1표만 가능",
         github_text: "GitHub 사용자라면 이 저장소에 스타를 눌러주세요:",
         price_title: "💰 원가 vs 소매가",
         cta_title: "🌍 전 세계 소비자의 목소리를 들려주세요",
-        cta_text: "이 웹사이트는 오픈소스이며 다른 명품 브랜드에도 복제할 수 있습니다.<br>함께 \"시민 명품 감시 플랫폼\"을 구축합시다.",
+        cta_text: "이 웹사이트는 오픈소스이며 다른 명품 브랜드에도 복제할 수 있습니다.<br>함께 \\\"시민 명품 감시 플랫폼\\\"을 구축합시다.",
         btn_github: "📦 GitHub에서 보기",
         btn_share: "🔗 사이트 공유하기",
         footer: "© 2026 에르메스 윤리적 청원 | 오픈소스 이니셔티브 | Powered by 龙虾姬 🦞",
@@ -87,39 +87,22 @@ const translations = {
     }
 };
 
-// 国家代码到语言的映射
-const countryToLang = {
-    'CN': 'zh', 'TW': 'zh', 'HK': 'zh', 'MO': 'zh',
-    'US': 'en', 'GB': 'en', 'AU': 'en', 'CA': 'en',
-    'FR': 'fr',
-    'JP': 'ja',
-    'KR': 'ko'
-};
-
-// 检测用户语言
-async function detectUserLanguage() {
-    // 1. 检查本地存储
+// 检测用户语言（基于浏览器语言 + 本地存储）
+function detectUserLanguage() {
+    // 1. 检查本地存储（用户手动选择的语言优先）
     const savedLang = localStorage.getItem('preferred_lang');
     if (savedLang && translations[savedLang]) {
         return savedLang;
     }
 
     // 2. 根据浏览器语言
-    const browserLang = navigator.language.substring(0, 2);
+    const browserLang = navigator.language.substring(0, 2).toLowerCase();
     if (translations[browserLang]) {
         return browserLang;
     }
 
-    // 3. 调用IP地理位置API
-    try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        const lang = countryToLang[data.country_code] || 'en';
-        return lang;
-    } catch (error) {
-        console.error('IP检测失败，使用浏览器语言:', error);
-        return browserLang in translations ? browserLang : 'en';
-    }
+    // 3. 默认返回英文
+    return 'en';
 }
 
 // 应用翻译
@@ -156,8 +139,8 @@ function initLanguageSwitcher() {
 }
 
 // 初始化
-(async function() {
-    const userLang = await detectUserLanguage();
+(function() {
+    const userLang = detectUserLanguage();
     applyTranslations(userLang);
     initLanguageSwitcher();
 })();

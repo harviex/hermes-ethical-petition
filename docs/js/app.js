@@ -32,6 +32,20 @@ const fallbackPrices = [
         estimated_cost: 15,
         currency: "$",
         specs: "100% silk, hand-rolled edges"
+    },
+    {
+        product: "Clic H Bracelet",
+        official_price: 770,
+        estimated_cost: 50,
+        currency: "$",
+        specs: "Gold plated, enamel"
+    },
+    {
+        product: "Evelyne 29",
+        official_price: 3200,
+        estimated_cost: 200,
+        currency: "$",
+        specs: "Clemence leather, canvas strap"
     }
 ];
 
@@ -83,6 +97,13 @@ function renderPrices(prices) {
 
         grid.appendChild(card);
     });
+
+    // 在价格网格后添加说明文字
+    const disclaimer = document.createElement('div');
+    disclaimer.className = 'price-disclaimer';
+    disclaimer.style.cssText = 'text-align: center; margin-top: 30px; padding: 15px; color: #888; font-size: 0.85rem; line-height: 1.6;';
+    disclaimer.innerHTML = getTranslation('price_disclaimer') || '以上价格由AI根据网络数据估算，可能存在不完全准确的情况';
+    grid.appendChild(disclaimer);
 }
 
 // 获取当前语言的翻译（简单版）
@@ -109,6 +130,13 @@ function getTranslation(key) {
             fr: 'Majoration',
             ja: 'マークアップ率',
             ko: '마크업'
+        },
+        'price_disclaimer': {
+            zh: '以上价格由AI根据网络数据估算，可能存在不完全准确的情况',
+            en: 'Prices estimated by AI based on web data. Accuracy may vary.',
+            fr: 'Prix estimés par l\'IA selon les données web. La précision peut varier.',
+            ja: '価格はAIによるウェブデータ推定です。精度は保証されません。',
+            ko: '가격은 AI가 웹 데이터를 기반으로 추정한 것입니다. 정확도는 다를 수 있습니다.'
         }
     };
 

@@ -110,6 +110,18 @@ body {
     margin-bottom: 20px;
     line-height: 1.2;
     animation: titleGlow 3s ease-in-out infinite;
+    /* 防止文字被不必要地断开 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: none;
+    /* 使用text-wrap: balance来改善换行平衡（现代浏览器支持） */
+    text-wrap: balance;
+}
+
+/* 防止数字被断开到下一行 */
+.hero-title .number {
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .hero-subtitle {
