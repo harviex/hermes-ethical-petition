@@ -14,17 +14,9 @@ let hasSupported = false;
     initSupportButton();
 })();
 
-// 检查是否已支持（通过Vercel API + localStorage备份）
+// 检查是否已支持（通过Vercel API检查IP，localStorage仅作为备用）
 async function checkSupportStatus() {
-    // 先检查localStorage（快速响应）
-    const supported = localStorage.getItem('hermes_supported') === 'true';
-    if (supported) {
-        hasSupported = true;
-        updateButtonToSupported();
-        return;
-    }
-    
-    // 再通过API检查（更准确的IP检查）
+    // 优先通过API检查IP（主要依据）
     try {
         const response = await fetch(`${VERCEL_API_BASE}/api/check`, {
             method: 'GET',
@@ -34,15 +26,43 @@ async function checkSupportStatus() {
         if (response.ok) {
             const data = await response.json();
             if (data.supported) {
+                // IP已支持
                 hasSupported = true;
                 localStorage.setItem('hermes_supported', 'true');
                 updateButtonToSupported();
+            } else {
+                // IP未支持，确保状态正确
+                hasSupported = false;
+                localStorage.removeItem('hermes_supported');
+                updateButtonToNormal();
             }
+            return;
         }
     } catch (error) {
-        console.error('检查支持状态失败:', error);
-        // 网络错误时不改变状态，依赖于localStorage
+        console.error('API检查失败，尝试localStorage备用:', error);
+        // API失败时才用localStorage作为备用
     }
+    
+    // API失败时的备用逻辑：检查localStorage
+    const supported = localStorage.getItem('hermes_supported') === 'true';
+    if (supported) {
+        hasSupported = true;
+        updateButtonToSupported();
+    } else {
+        hasSupported = false;
+        updateButtonToNormal();
+    }
+}
+
+// 更新按钮为正常状态（未支持）
+function updateButtonToNormal() {
+    const btn = document.getElementById('supportBtn');
+    if (!btn) return;
+    
+    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+    btn.textContent = translations[lang].support || '请您支持';
+    btn.classList.remove('supported');
+    btn.disabled = false;
 }
 
 // 更新按钮为"已支持"状态
