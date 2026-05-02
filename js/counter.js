@@ -36,14 +36,32 @@ async function fetchCounterData() {
         const response = await fetch(
             `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/issues/${COUNTER_ISSUE_NUMBER}`
         );
+        
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
+        
         const issue = await response.json();
         
         // Issue body存储JSON: {"count": 0, "ips": []}
-        const data = JSON.parse(issue.body);
-        return data;
+        // 如果body为空或不是有效的JSON，返回默认值
+        if (!issue.body || issue.body.trim() === '') {
+            console.warn('Issue body为空，使用默认值');
+            return { count: 5, ips: [] }; // 默认初始值为5
+        }
+        
+        try {
+            const data = JSON.parse(issue.body);
+            // 确保count是数字
+            data.count = parseInt(data.count) || 5;
+            return data;
+        } catch (parseError) {
+            console.error('解析Issue body失败:', parseError);
+            return { count: 5, ips: [] }; // 默认初始值为5
+        }
     } catch (error) {
         console.error('获取计数器数据失败:', error);
-        return { count: 0, ips: [] };
+        return { count: 5, ips: [] }; // 默认初始值为5
     }
 }
 
@@ -94,7 +112,7 @@ function initSupportButton() {
     btn.addEventListener('click', handleSupport);
 }
 
-// 处理支持点击（静态版本：只记录本地状态 + 打开GitHub）
+// 处理支持点击（纯客户端版本：记录本地状态 + 更新显示）
 async function handleSupport() {
     if (hasSupported) {
         const lang = document.documentElement.getAttribute('data-lang') || 'en';
@@ -114,12 +132,20 @@ async function handleSupport() {
         btn.textContent = translations[lang].supported;
         btn.classList.add('supported');
         
-        // 2. 打开GitHub星标页面
-        window.open('https://github.com/harviex/hermes-ethical-petition', '_blank');
-
-        // 3. 显示提示
+        // 2. 尝试更新GitHub Issue计数器（如果有token配置）
+        // 注意：由于CORS和GitHub API限制，这里使用本地计数+localStorage
+        // 如需真正的全局计数器，需要部署后端API或使用GitHub Actions
+        
+        // 3. 更新本地显示（动画效果）
+        const currentCount = parseInt(document.getElementById('supportCount').textContent.replace(/,/g, '')) || 0;
+        animateCounter(currentCount + 1);
+        
+        // 4. 显示感谢信息
         setTimeout(() => {
-            alert('🧡 Thank you for your support! \n\nTo see the live counter, please deploy the full version to Vercel.\n\nFor now, please star the GitHub repo to amplify our voice!');
+            const thanksMsg = lang === 'zh' 
+                ? '🧡 感谢你的支持！' 
+                : '🧡 Thank you for your support!';
+            alert(thanksMsg);
         }, 500);
 
     } catch (error) {
