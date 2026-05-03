@@ -132,12 +132,12 @@ function getTranslation(key) {
             ko: '마크업'
         },
         'price_disclaimer': {
-            zh: '價格由AI根據網絡數量估算，可能不完全準確。',
+            zh: '由AI根據網絡數量估算，可能不完全準確。',
             en: 'Prices estimated by AI based on web data. Accuracy may vary.',
             fr: 'Prix estimés par l\'IA selon les données web. La précision peut varier.',
             ja: '価格はAIによるウェブデータ推定です。精度は保証されません。',
-            ko: '가격은 AI가 웹 데이터를 기반으로 추정한 것입니다. 정확도는 다를 수 있습니다.'
-        }
+            ko: 'AI가 웹 데이터를 기반으로 추정한 가격입니다. 정확도는 다를 수 있습니다.'
+        },
     };
 
     return translations_map[key] ? translations_map[key][lang] : key;
