@@ -17,7 +17,7 @@ const translations = {
         cta_text: "這個網站是開源的，可以複製到其他奢侈品品牌。<br>讓我們一起建立一個\"人民奢侈品監督平台\"。",
         btn_github: "📦 在GitHub上查看",
         btn_share: "🔗 分享這個網站",
-        footer: "© 2026 Hermès Ethical Petition | 開源倡議 | Powered by Hermes Agent (龍蝦姬) 🦞",
+        footer: "© 2026 Hermès Ethical Petition | <a href=\"https://github.com/harviex/hermes-ethical-petition\" target=\"_blank\">開源倡議</a> | Powered by Hermes Agent (龍蝦姬) 🦞",
         supported: "✅ 已支持",
         already_supported: "您已經支持過這個倡議了！"
     },
@@ -33,7 +33,7 @@ const translations = {
         cta_text: "This website is open-source and can be replicated for other luxury brands.<br>Let's build a \"People's Luxury Watchdog Platform\" together.",
         btn_github: "📦 View on GitHub",
         btn_share: "🔗 Share This Site",
-        footer: "© 2026 Hermès Ethical Petition | Open Source Initiative | Powered by Hermes Agent (龍蝦姬) 🦞",
+        footer: "© 2026 Hermès Ethical Petition | <a href=\"https://github.com/harviex/hermes-ethical-petition\" target=\"_blank\">Open Source Initiative</a> | Powered by Hermes Agent (龍蝦姬) 🦞",
         supported: "✅ Supported",
         already_supported: "You have already supported this petition!"
     },
@@ -49,7 +49,7 @@ const translations = {
         cta_text: "Ce site est open-source et peut être répliqué pour d'autres marques de luxe.<br>Construisons ensemble une \"Plateforme Citoyenne de Surveillance du Luxe\".",
         btn_github: "📦 Voir sur GitHub",
         btn_share: "🔗 Partager Ce Site",
-        footer: "© 2026 Pétition Éthique Hermès | Initiative Open Source | Propulsé par Hermes Agent (龍蝦姬) 🦞",
+        footer: "© 2026 Pétition Éthique Hermès | <a href=\"https://github.com/harviex/hermes-ethical-petition\" target=\"_blank\">Initiative Open Source</a> | Propulsé par Hermes Agent (龍蝦姬) 🦞",
         supported: "✅ Soutenu",
         already_supported: "Vous avez déjà soutenu cette pétition !"
     },
@@ -65,7 +65,7 @@ const translations = {
         cta_text: "このウェブサイトはオープンソースで、他のラグジュアリーブランドにも応用できます。<br>「人民のラグジュアリー監視プラットフォーム」を共に構築しましょう。",
         btn_github: "📦 GitHubで見る",
         btn_share: "🔗 このサイトをシェア",
-        footer: "© 2026 エルメス倫理的嘆願 | オープンソースイニシアチブ | Powered by Hermes Agent (龍蝦姬) 🦞",
+        footer: "© 2026 エルメス倫理的嘆願 | <a href=\"https://github.com/harviex/hermes-ethical-petition\" target=\"_blank\">オープンソースイニシアチブ</a> | Powered by Hermes Agent (龍蝦姬) 🦞",
         supported: "✅ 支持済み",
         already_supported: "あなたはすでにこの嘆願を支持しています！"
     },
@@ -81,7 +81,7 @@ const translations = {
         cta_text: "이 웹사이트는 오픈소스이며 다른 명품 브랜드에도 복제할 수 있습니다.<br>함께 \"시민 명품 감시 플랫폼\"을 구축합시다.",
         btn_github: "📦 GitHub에서 보기",
         btn_share: "🔗 사이트 공유하기",
-        footer: "© 2026 에르메스 윤리적 청원 | 오픈소스 이니셔티브 | Powered by Hermes Agent (龍蝦姬) 🦞",
+        footer: "© 2026 에르메스 윤리적 청원 | <a href=\"https://github.com/harviex/hermes-ethical-petition\" target=\"_blank\">오픈소스 이니셔티브</a> | Powered by Hermes Agent (龍蝦姬) 🦞",
         supported: "✅ 지원됨",
         already_supported: "이미 이 청원을 지원하셨습니다!"
     }
