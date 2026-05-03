@@ -126,6 +126,9 @@ function applyTranslations(lang) {
 
     // 保存到本地存储
     localStorage.setItem('preferred_lang', lang);
+    
+    // 触发语言切换事件，供其他模块监听
+    document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
 }
 
 // 语言切换按钮事件

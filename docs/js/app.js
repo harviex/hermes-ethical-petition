@@ -124,7 +124,7 @@ function getTranslation(key) {
             ja: '原価（推定）',
             ko: '원가 (추정)'
         },
-        'mark-up': {
+        'markup': {
             zh: '加價率',
             en: 'Markup',
             fr: 'Majoration',
@@ -146,6 +146,11 @@ function getTranslation(key) {
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
     loadPrices();
+    
+    // 监听语言切换事件，重新渲染价格卡片
+    document.addEventListener('languageChanged', () => {
+        loadPrices();
+    });
 });
 
 // 导出供其他脚本使用
