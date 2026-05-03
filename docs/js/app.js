@@ -102,7 +102,7 @@ function renderPrices(prices) {
     const disclaimer = document.createElement('div');
     disclaimer.className = 'price-disclaimer';
     disclaimer.style.cssText = 'text-align: center; margin-top: 30px; padding: 15px; color: #888; font-size: 0.85rem; line-height: 1.6;';
-    disclaimer.innerHTML = getTranslation('price_disclaimer') || '以上价格由AI根据网络数据估算，可能存在不完全准确的情况';
+    disclaimer.innerHTML = getTranslation('price_disclaimer') || '價格由AI根據網絡數量估算，可能不完全準確。';
     grid.appendChild(disclaimer);
 }
 
@@ -111,7 +111,7 @@ function getTranslation(key) {
     const lang = document.documentElement.getAttribute('data-lang') || 'en';
     const translations_map = {
         'official_price': {
-            zh: '官方售价',
+            zh: '官方售價',
             en: 'Official Price',
             fr: 'Prix Officiel',
             ja: '小売価格',
@@ -124,15 +124,15 @@ function getTranslation(key) {
             ja: '原価（推定）',
             ko: '원가 (추정)'
         },
-        'markup': {
-            zh: '加价率',
+        'mark-up': {
+            zh: '加價率',
             en: 'Markup',
             fr: 'Majoration',
             ja: 'マークアップ率',
             ko: '마크업'
         },
         'price_disclaimer': {
-            zh: '以上价格由AI根据网络数据估算，可能存在不完全准确的情况',
+            zh: '價格由AI根據網絡數量估算，可能不完全準確。',
             en: 'Prices estimated by AI based on web data. Accuracy may vary.',
             fr: 'Prix estimés par l\'IA selon les données web. La précision peut varier.',
             ja: '価格はAIによるウェブデータ推定です。精度は保証されません。',
